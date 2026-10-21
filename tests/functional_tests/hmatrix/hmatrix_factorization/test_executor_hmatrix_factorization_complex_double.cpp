@@ -15,10 +15,15 @@ int main(int, char *[]) {
                 for (auto trans : {'N', 'T'}) {
                     for (int number_of_threads : {1, 4}) {
                         is_error = is_error || test_executor_hmatrix_lu<std::complex<double>, GeneratorTestComplexSymmetric>(trans, n1, n2, epsilon, eta, margin, number_of_threads);
+                        is_error = is_error || test_lazy_hmatrix_lu<std::complex<double>, GeneratorTestComplexSymmetric>(trans, n1, n2, epsilon, eta, margin, number_of_threads);
                     }
                 }
             }
         }
+    }
+
+    for (auto epsilon : {1e-4, 1e-6}) {
+        is_error = is_error || test_lazy_hmatrix_lu_first_kind<std::complex<double>>(2000, epsilon, 10, 4);
     }
 
     std::cout << "+++++++++++++++++++++++++++++++++++++++++++" << '\n';

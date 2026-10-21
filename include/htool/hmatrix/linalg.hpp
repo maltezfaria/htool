@@ -4,6 +4,7 @@
 #include "linalg/add_hmatrix_matrix_product.hpp"
 #include "linalg/add_hmatrix_vector_product.hpp"
 #include "linalg/executor/factorization.hpp"
+#include "linalg/executor/lazy_factorization.hpp"
 #include "linalg/factorization.hpp"
 #include "linalg/scale.hpp"
 #include "linalg/solve.hpp"
